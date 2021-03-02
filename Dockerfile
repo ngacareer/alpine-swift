@@ -7,15 +7,18 @@
 
 FROM ngacareer/alpine-python
 
-RUN apk add \
-  git \
-  cmake \
-  ninja \
-  bash \
-  build-base \
-  g++ \
-  screen \
-  htop
+USER root
+
+RUN apk upgrade --no-cache --update && \
+    apk add --no-cache --update \
+    git \
+    cmake \
+    ninja \
+    bash \
+    build-base \
+    g++ \
+    screen \
+    htop
 
 #RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 #  python get-pip.py
